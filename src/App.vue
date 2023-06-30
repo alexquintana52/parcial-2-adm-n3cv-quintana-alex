@@ -7,7 +7,8 @@
     <v-navigation-drawer app v-model="drawer" temporary>
       <v-layout class="d-flex flex-column align-center">
         <router-link class="navLink mt-10 mb-5" to="/">Home</router-link>
-        <router-link class="navLink" to="/search">Search Anime</router-link>
+        <router-link class="navLink mb-5" to="/search">Search Anime</router-link>
+        <router-link class="navLink" to="/searchManga">Search Manga</router-link>
       </v-layout>
     </v-navigation-drawer>
     <v-container class="mt-12">

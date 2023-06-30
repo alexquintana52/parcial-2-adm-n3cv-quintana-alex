@@ -1,12 +1,12 @@
 <template>
   <v-app>
-    <h1 class="text-center py-10 font-weight-bold">Search Anime</h1>
+    <h1 class="text-center py-10 font-weight-bold">Search Manga</h1>
     <form @submit.prevent="HandleSearch">
-      <input v-model="search_query" class="search-box mb-10" id="search-box" type="text" placeholder="Enter Anime Name">
+      <input v-model="search_query" class="search-box mb-10" id="search-box" type="text" placeholder="Enter Manga Name">
     </form>
     <v-container>
-      <v-row class="justify-center" v-if="animeList.length > 0">
-        <CardAnime v-for="anime in animeList" :key="anime.mal_id" :anime="anime" />
+      <v-row class="justify-center" v-if="mangaList.length > 0">
+        <CardManga v-for="manga in mangaList" :key="manga.mal_id" :manga="manga" />
       </v-row>
       <v-row class="justify-center" v-else>
         <h3>Sorry, we have no results...</h3>
@@ -16,26 +16,26 @@
 </template>
 
 <script>
-import CardAnime from '../components/CardAnime.vue';
+import CardManga from '../components/CardManga.vue';
 
 export default {
-  name: 'SearchView',
+  name: 'SearchMangaView',
   components: {
-    CardAnime,
+    CardManga,
   },
   data() {
     return {
-      animeList: [],
+      mangaList: [],
       search_query: '',
     }
   },
   methods: {
     HandleSearch() {
-      fetch(`https://api.jikan.moe/v4/anime?sfw&q=${this.search_query}&limit=24`)
+      fetch(`https://api.jikan.moe/v4/manga?sfw&q=${this.search_query}&limit=24`)
         .then(response => response.json())
         .then(data => {
           console.log(data.data);
-          this.animeList = data.data;
+          this.mangaList = data.data;
           this.search_query = '';
         })
     }

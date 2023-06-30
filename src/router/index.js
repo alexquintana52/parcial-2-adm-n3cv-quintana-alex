@@ -13,9 +13,9 @@ const routes = [
     component: () => import('../views/SearchView.vue')
   },
   {
-    path: '/anime/:id/details',
-    name: 'details',
-    component: () => import('../views/SearchView.vue')
+    path: '/searchManga',
+    name: 'searchManga',
+    component: () => import('../views/SearchMangaView.vue')
   }
 ]
 
