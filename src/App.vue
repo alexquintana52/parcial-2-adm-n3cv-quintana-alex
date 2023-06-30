@@ -48,17 +48,4 @@ export default {
   color: crimson;
 }
 
-.flexbar {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin: 25px 0;
-  row-gap: 10px;
-
-}
-
-.stickybar {
-  position: sticky;
-}
-
 </style>
