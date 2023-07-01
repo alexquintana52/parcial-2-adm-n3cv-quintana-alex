@@ -1,4 +1,4 @@
-# parcial-2-adm-n3cv-quintana-alex
+# Quintana Alex | Parcial 2 | ADM
 
 ## Project setup
 ```
